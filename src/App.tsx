@@ -1,12 +1,11 @@
 import React from "react";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { Router } from "./router";
 
 export const App: React.FC = () => {
-  const client = new QueryClient();
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <>
+      <Router />
+    </>
   );
 };
 
