@@ -5,7 +5,7 @@ export interface F1ResponseType {
   session_key: string;
 }
 
-export const APP_SUFFIX = {
+export const API_SUFFIX = {
   BASEURL: "https://api.openf1.org/v1", // base url
   INTERVAL: "/intervals?session_key=latest&driver_number=", // interval times
   LAPS: "/laps?session_key=latest&driver_number=", // lap times
