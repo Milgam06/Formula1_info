@@ -1,7 +1,13 @@
+import { FormulaDatas } from "@/api";
+
 export const MainPage: React.FC = () => {
+  const formula = new FormulaDatas();
+
+  const respone = formula.getSessionStatus();
+  console.log(respone);
   return (
     <>
-      <h1>hello</h1>
+      <h1>asdf</h1>
     </>
   );
 };
