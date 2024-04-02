@@ -96,4 +96,34 @@ export const CIRCUIT_INFO: CircuitType[] = [
     country: "USA",
     circuitLength: "5412",
   },
+  {
+    id: 16,
+    name: "Sochi Autodrom",
+    country: "Russia",
+    circuitLength: "5848",
+  },
+  {
+    id: 17,
+    name: "Circuit Paul Ricard",
+    country: "France",
+    circuitLength: "5842",
+  },
+  {
+    id: 18,
+    name: "Hockenheimring",
+    country: "Germany",
+    circuitLength: "4574",
+  },
+  {
+    id: 19,
+    name: "Yas Marina Circuit",
+    country: "UAE",
+    circuitLength: "5554",
+  },
+  {
+    id: 20,
+    name: "Circuit of the Americas",
+    country: "USA",
+    circuitLength: "5513",
+  },
 ];
