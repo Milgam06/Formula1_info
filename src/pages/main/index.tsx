@@ -12,7 +12,7 @@ export const MainPage: React.FC = () => {
       setSessionStatus(respone);
     };
     fetchData();
-  }, [sessionStatus]);
+  }, []);
   console.log(sessionStatus);
   return (
     <>
