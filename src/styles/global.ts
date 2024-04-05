@@ -31,7 +31,7 @@ export const globalStyle = () => {
     #app,
     #root,
     #__next {
-      font-family: "Pretendard Variable";
+      font-family: "Spectral SC", serif;
       font-weight: 400;
       font-style: normal;
       letter-spacing: -0.03em;
