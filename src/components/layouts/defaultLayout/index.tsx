@@ -8,8 +8,10 @@ interface DefaultLayoutProps {
 export const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
   return (
     <>
-      <Navbar />
-      <S.DefaultLayoutContainer>{children}</S.DefaultLayoutContainer>
+      <S.DefaultLayoutContainer>
+        <Navbar />
+        {children}
+      </S.DefaultLayoutContainer>
     </>
   );
 };
