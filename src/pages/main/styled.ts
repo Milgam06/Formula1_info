@@ -6,5 +6,5 @@ export const MainPageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
