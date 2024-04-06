@@ -31,10 +31,10 @@ export const globalStyle = () => {
     #app,
     #root,
     #__next {
-      font-family: "Spectral SC", serif;
-      font-weight: 400;
+      font-family: ‘Times New Roman’, Times, serif;
+      font-weight: 300;
       font-style: normal;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.03rem;
     }
 
     html,
