@@ -11,31 +11,38 @@ export const NavbarContainer = styled(motion.div)`
   background-color: #841613;
 `;
 
-export const NavbarContentsContainer = styled.div`
+export const NavbarContentsContainer = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
+  /* align-items: center; */
+  padding: 1rem 1rem;
 `;
 
-export const NavbarTitleWrapper = styled.div`
-  height: 5rem;
+export const NavbarTitleWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #fff;
-  padding: 0 0.4rem;
-  margin: 0 0.4rem;
+  line-height: 1;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
 `;
 
-export const NavbarMenuContainer = styled.div`
-  height: 10rem;
+export const NavbarMenuContainer = styled(motion.div)`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* align-items: center; */
+  row-gap: 4.4rem;
+`;
+
+export const NavbarMenuWrapper = styled(motion.div)`
+  display: flex;
   align-items: center;
-  border: 1px solid #fff;
+  padding: 0 1rem;
+  cursor: pointer;
 `;
