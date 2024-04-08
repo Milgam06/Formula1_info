@@ -1,18 +1,19 @@
 import { API_SUFFIX, instance } from "./api";
 
 export interface FormulaPropsType {
+  driverNumber: string;
   sessionLatestStatus: boolean;
-  sessionKey?: string;
+  sessionKey: string;
 }
 
 export class FormulaDatas {
-  async getIntervalStatus(driverNumber: string, props: FormulaPropsType) {
+  async getIntervalStatus(props: FormulaPropsType) {
     try {
       const sessionKey = props.sessionLatestStatus
         ? "latest"
         : props.sessionKey;
       const res = await instance.get(
-        API_SUFFIX.INTERVAL + driverNumber + "&session_key=" + sessionKey
+        API_SUFFIX.INTERVAL + props.driverNumber + "&session_key=" + sessionKey
       );
       console.log(res.data[0]);
       return res.data[0];
@@ -36,9 +37,9 @@ export class FormulaDatas {
     }
   }
 
-  async getLapStatus(driverNumber: string) {
+  async getLapStatus(props: FormulaPropsType) {
     try {
-      const res = await instance.get(API_SUFFIX.LAPS + driverNumber);
+      const res = await instance.get(API_SUFFIX.LAPS + props.driverNumber);
       console.log(res.data[0]);
       return res.data[0];
     } catch (error) {
@@ -47,9 +48,9 @@ export class FormulaDatas {
     }
   }
 
-  async getPositionStatus(driverNumber: string) {
+  async getPositionStatus(props: FormulaPropsType) {
     try {
-      const res = await instance.get(API_SUFFIX.POSITION + driverNumber);
+      const res = await instance.get(API_SUFFIX.POSITION + props.driverNumber);
       console.log(res.data[0]);
       return res.data[0];
     } catch (error) {
@@ -57,9 +58,9 @@ export class FormulaDatas {
       return 0;
     }
   }
-  async getCarStatus(driverNumber: string) {
+  async getCarStatus(props: FormulaPropsType) {
     try {
-      const res = await instance.get(API_SUFFIX.CARS + driverNumber);
+      const res = await instance.get(API_SUFFIX.CARS + props.driverNumber);
       console.log(res.data[0]);
       return res.data[0];
     } catch (error) {
