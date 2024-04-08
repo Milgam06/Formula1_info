@@ -1,5 +1,14 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-export const useApi = () => {
-  return 0;
-};
+import { FormulaPropsType, FormulaDatas } from "@/api";
+
+export class useFormula {
+  private formulaDatas = new FormulaDatas();
+
+  async fetchIntervalStatus(props: FormulaPropsType) {
+    const [intervalData, setIntervalData] = useState<string[]>([]);
+    try {
+      const respone = await this.formulaDatas.getIntervalStatus();
+    }
+  }
+}
