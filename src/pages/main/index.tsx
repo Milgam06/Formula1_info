@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { FormulaDatas } from "@/api";
+import { Button } from "@/components";
 import * as S from "./styled";
 
 export const MainPage: React.FC = () => {
@@ -8,12 +9,12 @@ export const MainPage: React.FC = () => {
   const [sessionStatus, setSessionStatus] = useState<string[]>([]);
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   const respone = await formula.getSessionStatus({
-    //     sessionLatestStatus: true,
-    //   });
-    //   setSessionStatus(respone);
-    // };
+    const fetchData = async () => {
+      const respone = await formula.getSessionStatus({
+        sessionLatestStatus: true,
+      });
+      setSessionStatus(respone);
+    };
 
     // const fetchData = async () => {
     // const respone = await formula.getIntervalStatus("1", {
@@ -31,17 +32,26 @@ export const MainPage: React.FC = () => {
     //   const respone = await formula.getPositionStatus("44");
     //   setSessionStatus(respone);
     // };
-    const fetchData = async () => {
-      const respone = await formula.getCarStatus("22");
-      setSessionStatus(respone);
-    };
+    // const fetchData = async () => {
+    //   const respone = await formula.getCarStatus({ driverNumber: "44" });
+    //   setSessionStatus(respone);
+    // };
 
     fetchData();
   }, []);
   console.log(sessionStatus, "max");
   return (
     <>
-      <S.MainPageContainer>asdf</S.MainPageContainer>
+      <S.MainPageContainer>
+        <S.MainPageContentContainer>
+          <Button onClick={() => console.log("clicked")} isLarge={true}>
+            sdagf
+          </Button>
+          <Button onClick={() => console.log("clicked")} isLarge={false}>
+            Click me
+          </Button>
+        </S.MainPageContentContainer>
+      </S.MainPageContainer>
     </>
   );
 };
