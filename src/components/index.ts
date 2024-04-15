@@ -1,3 +1,2 @@
-export * from "./Navbar";
-export * from "./Text";
+export * from "./common";
 export * from "./layouts";
