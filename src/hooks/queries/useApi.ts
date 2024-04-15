@@ -8,7 +8,15 @@ export class useFormula {
   async fetchIntervalStatus(props: FormulaPropsType) {
     const [intervalData, setIntervalData] = useState<string[]>([]);
     try {
-      const respone = await this.formulaDatas.getIntervalStatus();
+      const respone = await this.formulaDatas.getIntervalStatus({
+        driverNumber: "1",
+        sessionLatestStatus: true,
+        sessionKey: "",
+      });
+      setIntervalData(respone);
+      return intervalData;
+    } catch (error) {
+      console.error("Error fetching interval status", error);
     }
   }
 }
