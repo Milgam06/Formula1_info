@@ -1,8 +1,9 @@
 import axios from "axios";
 
-export interface F1ResponseType {
-  driver_number: number;
-  session_key: string;
+export interface FormulaPropsType {
+  driverNumber?: string;
+  sessionLatestStatus?: boolean;
+  sessionKey?: string | "";
 }
 
 export const API_SUFFIX = {

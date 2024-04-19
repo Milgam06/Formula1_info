@@ -1,42 +1,19 @@
 import { useEffect, useState } from "react";
 
-import { FormulaDatas } from "@/api";
+import { getSessionStatus, SessionDataTypes } from "@/api";
 import { Button } from "@/components";
 import * as S from "./styled";
 
 export const MainPage: React.FC = () => {
-  const formula = new FormulaDatas();
-  const [sessionStatus, setSessionStatus] = useState<string[]>([]);
+  const [sessionStatus, setSessionStatus] = useState<SessionDataTypes>();
 
   useEffect(() => {
     const fetchData = async () => {
-      const respone = await formula.getSessionStatus({
+      const respone = await getSessionStatus({
         sessionLatestStatus: true,
       });
       setSessionStatus(respone);
     };
-
-    // const fetchData = async () => {
-    // const respone = await formula.getIntervalStatus("1", {
-    //   sessionLatestStatus: true,
-    // });
-    // setSessionStatus(respone);
-    // };
-
-    // const fetchData = async () => {
-    //   const respone = await formula.getLapStatus("44");
-    //   setSessionStatus(respone);
-    // };
-
-    // const fetchData = async () => {
-    //   const respone = await formula.getPositionStatus("44");
-    //   setSessionStatus(respone);
-    // };
-    // const fetchData = async () => {
-    //   const respone = await formula.getCarStatus({ driverNumber: "44" });
-    //   setSessionStatus(respone);
-    // };
-
     fetchData();
   }, []);
   console.log(sessionStatus, "max");
@@ -44,8 +21,8 @@ export const MainPage: React.FC = () => {
     <>
       <S.MainPageContainer>
         <S.MainPageContentContainer>
-          <Button onClick={() => console.log("clicked")} isLarge={true}>
-            sdagf
+          <Button onClick={() => console.log("clicked")} isLarge={false}>
+            asdfr
           </Button>
           <Button onClick={() => console.log("clicked")} isLarge={false}>
             Click me

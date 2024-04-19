@@ -17,5 +17,6 @@ export const MainPageContentContainer = styled.div`
   align-items: center;
   padding: 2rem 2rem;
   overflow: hidden;
+  row-gap: 1rem;
   border: 1px solid #f9f;
 `;
