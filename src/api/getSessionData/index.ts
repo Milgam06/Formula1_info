@@ -21,7 +21,7 @@ export interface SessionDataTypes {
  * @param sessionLatestStatus: boolean
  * @param sessionKey: string
  */
-export const getSessionStatus = async (
+export const getSessionData = async (
   props: FormulaPropsType
 ): Promise<SessionDataTypes | undefined> => {
   try {

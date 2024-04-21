@@ -24,7 +24,7 @@ export interface LapDataTypes {
  * @param sessionKey: string
  * @param driverNumber: string
  */
-export const getLapStatus = async (
+export const getLapData = async (
   props: FormulaPropsType
 ): Promise<LapDataTypes | undefined> => {
   try {

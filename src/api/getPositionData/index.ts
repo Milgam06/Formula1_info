@@ -13,7 +13,7 @@ export interface PositionDataTypes {
  * @param sessionKey: string
  * @param driverNumber: string
  */
-export const getPositionStatus = async (
+export const getPositionData = async (
   props: FormulaPropsType
 ): Promise<PositionDataTypes | undefined> => {
   try {

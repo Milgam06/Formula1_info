@@ -14,7 +14,7 @@ export interface IntervalDataTypes {
  * @param sessionKey: string
  * @param driverNumber: string
  */
-export const getIntervalStatus = async (
+export const getIntervalData = async (
   props: FormulaPropsType
 ): Promise<IntervalDataTypes | undefined> => {
   try {
