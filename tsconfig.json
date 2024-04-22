@@ -30,7 +30,8 @@
       "@/hooks/*": ["src/hooks/*"],
       "@/api/*": ["src/api/*"],
       "@/styles/*": ["src/styles/*"],
-      "@/types/*": ["src/types/*"]
+      "@/types/*": ["src/types/*"],
+      "@/store/*": ["src/store/*"]
     }
   },
 
