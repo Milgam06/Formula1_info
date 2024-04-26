@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
 
-import { getSessionStatus, SessionDataTypes } from "@/api";
-import { Button } from "@/components";
+// import { getSessionData, SessionDataTypes } from "@/api";
+import { IntervalDataTypes, getIntervalData } from "@/api";
+import { Button, Livebar } from "@/components";
 import * as S from "./styled";
 
 export const MainPage: React.FC = () => {
-  const [sessionStatus, setSessionStatus] = useState<SessionDataTypes>();
+  const [sessionStatus, setSessionStatus] = useState<IntervalDataTypes>();
 
   useEffect(() => {
+    // const fetchData = async () => {
+    //   const respone = await getSessionData({
+    //     sessionLatestStatus: true,
+    //   });
+    //   setSessionStatus(respone);
+    // };
     const fetchData = async () => {
-      const respone = await getSessionStatus({
+      const respone = await getIntervalData({
         sessionLatestStatus: true,
       });
       setSessionStatus(respone);
@@ -20,6 +27,7 @@ export const MainPage: React.FC = () => {
   return (
     <>
       <S.MainPageContainer>
+        <Livebar />
         <S.MainPageContentContainer>
           <Button onClick={() => console.log("clicked")} isLarge={false}>
             asdfr
