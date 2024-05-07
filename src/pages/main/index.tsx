@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 // import { getSessionData, SessionDataTypes } from "@/api";
 import { IntervalDataTypes, getIntervalData } from "@/api";
 import { Button, Livebar } from "@/components";
+import { useIntervalStore } from "@/store/interval";
 import * as S from "./styled";
 
 export const MainPage: React.FC = () => {
   const [sessionStatus, setSessionStatus] = useState<IntervalDataTypes>();
-
+  const { intervalStatus } = useIntervalStore();
   useEffect(() => {
     // const fetchData = async () => {
     //   const respone = await getSessionData({
@@ -23,11 +24,16 @@ export const MainPage: React.FC = () => {
     };
     fetchData();
   }, []);
-  console.log(sessionStatus, "max");
   return (
     <>
       <S.MainPageContainer>
-        <Livebar />
+        {intervalStatus ? (
+          <>
+            <Livebar />
+          </>
+        ) : (
+          <></>
+        )}
         <S.MainPageContentContainer>
           <Button onClick={() => console.log("clicked")} isLarge={false}>
             asdfr
