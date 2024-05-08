@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
                 }}
               >
                 <Link to={item.path} style={{ textDecoration: "none" }}>
-                  <Text size={2.2} weight={100} colors="#fff">
+                  <Text size={2.4} weight={100} colors="#fff">
                     {item.title}
                   </Text>
                 </Link>
