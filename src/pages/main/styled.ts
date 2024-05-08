@@ -16,8 +16,9 @@ export const MainPageContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 3rem;
   overflow: hidden;
-  row-gap: 1rem;
+  row-gap: 4rem;
   border: 1px solid #f9f;
 `;

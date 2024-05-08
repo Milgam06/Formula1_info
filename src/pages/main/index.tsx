@@ -39,6 +39,12 @@ export const MainPage: React.FC = () => {
             asdfr
           </Button>
           <Button onClick={() => console.log("clicked")} isLarge={false}>
+            asdfr
+          </Button>
+          <Button onClick={() => console.log("clicked")} isLarge={false}>
+            asdfr
+          </Button>
+          <Button onClick={() => console.log("clicked")} isLarge={false}>
             Click me
           </Button>
         </S.MainPageContentContainer>
