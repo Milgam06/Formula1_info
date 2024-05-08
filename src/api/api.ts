@@ -8,7 +8,8 @@ export interface FormulaPropsType {
 
 export const API_SUFFIX = {
   BASEURL: "https://api.openf1.org/v1", // base url
-  INTERVAL: "/intervals?driver_number=", // interval times
+  DRIVERS: "/drivers?session_key=latest", // drivers info
+  INTERVAL: "/intervals?session_key=latest", // interval times
   LAPS: "/laps?session_key=latest&driver_number=", // lap times
   POSITION: "/positions?session_key=latest&driver_number=", // driver position
   SESSION: "/sessions?session_key=", // session info
