@@ -12,6 +12,7 @@ export interface PositionDataTypes {
  * @param sessionLatestStatus: boolean
  * @param sessionKey: string
  * @param driverNumber: string
+ * @returns PositionDataTypes
  */
 export const getPositionData = async (
   props: FormulaPropsType

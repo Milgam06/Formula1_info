@@ -17,6 +17,7 @@ export interface CarDataTypes {
  * @param sessionLatestStatus: boolean
  * @param sessionKey: string
  * @param driverNumber: string
+ * @returns CarDataTypes
  */
 export const getCarData = async (
   props: FormulaPropsType

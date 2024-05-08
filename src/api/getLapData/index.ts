@@ -23,6 +23,7 @@ export interface LapDataTypes {
  * @param sessionLatestStatus: boolean
  * @param sessionKey: string
  * @param driverNumber: string
+ * @returns LapDataTypes
  */
 export const getLapData = async (
   props: FormulaPropsType

@@ -20,6 +20,7 @@ export interface SessionDataTypes {
 /**
  * @param sessionLatestStatus: boolean
  * @param sessionKey: string
+ * @returns SessionDataTypes
  */
 export const getSessionData = async (
   props: FormulaPropsType
