@@ -14,8 +14,8 @@ export const useIntervalLiveCheck = () => {
 
   useEffect(() => {
     setInterval(async () => {
-      const respone = await getIntervalData({ sessionLatestStatus: true });
-      console.log(respone, "15s");
+      const respone = await getIntervalData({});
+      console.log(respone, "12s");
       if (respone === undefined) {
         setLiveCheck(false);
         falseIntervalStatus();
@@ -24,6 +24,6 @@ export const useIntervalLiveCheck = () => {
         trueIntervalStatus();
       }
       console.log(intervalStatus, liveCheck, "intervalStatus");
-    }, 15000);
+    }, 12000);
   }, []);
 };
