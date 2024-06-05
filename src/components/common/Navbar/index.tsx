@@ -37,9 +37,11 @@ export const Navbar: React.FC = () => {
       <S.NavbarContainer variants={NavbarVars} initial="start" animate="end">
         <S.NavbarContentsContainer>
           <S.NavbarTitleWrapper variants={NavbarContentsVars}>
-            <Text size={3.4} weight={900} colors="#fff">
-              FORMULA
-            </Text>
+            <a href="/" style={{ color: "inherit", textDecoration: "none" }}>
+              <Text size={3.4} weight={900} colors="#fff">
+                FORMULA
+              </Text>
+            </a>
           </S.NavbarTitleWrapper>
           <S.NavbarMenuContainer>
             {MENU_ITEMS_LIST.map((item, key) => (
