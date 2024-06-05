@@ -1,3 +1,5 @@
+import { MotionProps } from "framer-motion";
+
 import { Text } from "..";
 import * as S from "./styled";
 
@@ -5,6 +7,7 @@ export interface ButtonProps {
   children: React.ReactNode;
   backgroundColor?: string;
   isLarge?: boolean;
+  animationProps?: MotionProps;
   onClick?: () => void;
 }
 
