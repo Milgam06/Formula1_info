@@ -1,29 +1,28 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { getIntervalData } from "@/api";
 import { useIntervalStore } from "@/store/interval";
+import { compareDate } from "@/hooks";
 
 /**
  * useIntervalLiveCheck
  * @summary check live session & set interval status
  */
 export const useIntervalLiveCheck = () => {
-  const [liveCheck, setLiveCheck] = useState<boolean>(false);
   const { intervalStatus, trueIntervalStatus, falseIntervalStatus } =
     useIntervalStore();
 
   useEffect(() => {
     setInterval(async () => {
       const respone = await getIntervalData({});
-      console.log(respone, "12s");
-      if (respone === undefined) {
-        setLiveCheck(false);
-        falseIntervalStatus();
-      } else if (respone !== undefined) {
-        setLiveCheck(true);
+      const diffInHour = compareDate({ ISODate: respone?.date });
+      console.log(diffInHour, "diffInHour");
+      if (diffInHour != null && parseFloat(diffInHour) <= 0.5) {
         trueIntervalStatus();
+      } else {
+        falseIntervalStatus();
       }
-      console.log(intervalStatus, liveCheck, "intervalStatus");
+      console.log(intervalStatus, "intervalStatus");
     }, 12000);
   }, []);
 };
