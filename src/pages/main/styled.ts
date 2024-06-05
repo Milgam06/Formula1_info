@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
 export const MainPageContainer = styled.div`
   width: 100%;
@@ -9,7 +10,7 @@ export const MainPageContainer = styled.div`
   align-items: center;
 `;
 
-export const MainPageContentContainer = styled.div`
+export const MainPageContentContainer = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;
@@ -20,5 +21,4 @@ export const MainPageContentContainer = styled.div`
   padding: 2rem 3rem;
   overflow: hidden;
   row-gap: 4rem;
-  border: 1px solid #f9f;
 `;
