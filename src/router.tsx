@@ -1,5 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom";
-import { MainPage } from "@/pages";
+import { MainPage, LatestPage } from "@/pages";
 import { DefaultLayout } from "./components/layouts";
 
 export const Router: React.FC = () => {
@@ -16,6 +16,7 @@ export const Router: React.FC = () => {
           }
         >
           <Route path="/" element={<MainPage />} />
+          <Route path="/latest" element={<LatestPage />} />
         </Route>
       </Routes>
     </>
