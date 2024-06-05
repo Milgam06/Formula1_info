@@ -1,16 +1,15 @@
 export interface CompareDateProps {
-  ISODate: string;
-  targetDate: string;
+  ISODate: string | number | Date | undefined;
 }
 
-export const useCompareDate = ({ ISODate, targetDate }: CompareDateProps) => {
-  const date = new Date(ISODate);
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const commonDate = `${year}-${month}-${day}-${hours}-${minutes}`;
-  console.log(commonDate, "commonDate");
-  return commonDate;
+export const compareDate = ({ ISODate }: CompareDateProps) => {
+  if (ISODate != undefined) {
+    const date = new Date(ISODate);
+    const currentDate = new Date();
+    const timeDiff = currentDate.getTime() - date.getTime();
+    const diffInHour = timeDiff / (1000 * 3600);
+    return diffInHour.toFixed(1);
+  } else {
+    return null;
+  }
 };
