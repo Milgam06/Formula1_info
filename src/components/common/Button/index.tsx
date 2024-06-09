@@ -5,8 +5,9 @@ import * as S from "./styled";
 
 export interface ButtonProps {
   children: React.ReactNode;
-  backgroundColor?: string;
-  isLarge?: boolean;
+  isBackgroundImg?: boolean;
+  backgroundImg?: string;
+  isVertical?: boolean;
   animationProps?: MotionProps;
   onClick?: () => void;
 }
@@ -14,21 +15,25 @@ export interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
-  isLarge,
-  backgroundColor,
+  isVertical,
+  isBackgroundImg,
+  backgroundImg,
+  animationProps,
 }) => {
   return (
     <>
       <S.ButtonContainer
-        backgroundColor={backgroundColor}
+        isBackgroundImg={isBackgroundImg}
+        backgroundImg={backgroundImg}
         onClick={onClick}
         whileHover={{
-          scale: 1.02,
+          scale: 1.04,
           transition: { duration: 0.2 },
         }}
+        {...animationProps}
       >
-        <S.ButtonContentContainer isLarge={isLarge}>
-          <Text size={isLarge ? 6.6 : 4.6} weight={isLarge ? 900 : 600}>
+        <S.ButtonContentContainer isVertical={isVertical}>
+          <Text size={isVertical ? 6.6 : 4.6} weight={isVertical ? 900 : 600}>
             {children}
           </Text>
         </S.ButtonContentContainer>

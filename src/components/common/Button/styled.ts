@@ -2,16 +2,26 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export interface ButtonStyleProps {
-  isLarge?: boolean;
-  backgroundColor?: string;
+  isVertical?: boolean;
+  isBackgroundImg?: boolean;
+  backgroundImg?: string;
 }
 
 export const ButtonContainer = styled(motion.div)<ButtonStyleProps>`
-  background-color: ${(props) => props.backgroundColor || "#fff"};
+  ${(props) =>
+    props.isBackgroundImg
+      ? `
+      background-repeat : no-repeat;
+      background-size : cover;
+      background-position: center;
+      background-image: ${props.backgroundImg};
+  `
+      : `background-color: #fff`};
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2.6rem;
+  padding: 1rem 2.6rem;
   border: none;
   border-radius: 2rem;
   cursor: pointer;
@@ -21,8 +31,6 @@ export const ButtonContentContainer = styled.div<ButtonStyleProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: ${(props) => (props.isLarge ? "76rem" : "30rem")};
-  height: ${(props) => (props.isLarge ? "24rem" : "14rem")};
-  /* border: 1px solid #000; */
-  /* gap: 1rem; */
+  width: ${(props) => (props.isVertical ? "20rem" : "32rem")};
+  height: ${(props) => (props.isVertical ? "40rem" : "14rem")};
 `;
