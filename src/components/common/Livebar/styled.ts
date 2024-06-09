@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const LivebarContainer = styled(motion.div)`
-  margin: 1rem 0;
+  margin: 0;
   top: 0;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@ export const LivebarContainer = styled(motion.div)`
 `;
 
 export const LivbarContentContainer = styled.div`
-  width: 70rem;
+  width: 80rem;
   display: flex;
   align-items: center;
   padding: 1.2rem 0;
